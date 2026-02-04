@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:26
 
 LABEL version="1.0.4"
 LABEL repository="https://github.com/axgn/hexo-action"
@@ -10,6 +10,6 @@ COPY sync_deploy_history.js /sync_deploy_history.js
 
 RUN apt-get update > /dev/null && \
     apt-get install -y git openssh-client > /dev/null ; \
-    chmod +x /entrypoint.sh
+    chmod +x /entrypoint.sh && apt-get install -y pandoc
 
 ENTRYPOINT ["/entrypoint.sh"]
