@@ -1,4 +1,4 @@
-FROM node:26
+FROM node:20
 
 LABEL version="1.0.4"
 LABEL repository="https://github.com/axgn/hexo-action"
